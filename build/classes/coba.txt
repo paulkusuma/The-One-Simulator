@@ -1,0 +1,41 @@
+
+
+## Scenario settings
+Scenario.name = Drop_Report_ByInterval
+Scenario.simulateConnections = true
+Scenario.updateInterval = 0.1
+Scenario.endTime = 43200
+Scenario.nrofHostGroups = 1
+
+# Common settings for all groups
+Group.router = SprayAndWaitRouter
+Group.movementModel = RandomWaypoint
+Group.nrofHosts = 50
+Group.bufferSize = 5M
+Group.waitTime = 0, 120
+# All nodes have the bluetooth interface
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+
+# "Bluetooth" interface for all nodes
+btInterface.type = SimpleBroadcastInterface
+# Transmit speed of 2 Mbps = 250kBps
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+
+## Message creation parameters
+# Creation interval in seconds (one new message every 25 to 35 seconds)
+Events1.interval = 120,125
+# Message sizes (500kB - 1MB)
+Events1.size = 100k, 200k
+# range of message source/destination addresses
+Events1.hosts = 0,49
+
+## Movement model settings
+# World's size for Movement Models without implicit size (width, height; meters)
+MovementModel.worldSize = 500, 200
+
+# how many reports to load
+Report.nrofReports = 1
+Report.report1 = DropReportByIntervalTime
+
