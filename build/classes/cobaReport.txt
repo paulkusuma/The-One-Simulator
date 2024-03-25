@@ -1,0 +1,18 @@
+## Scenario settings
+Scenario.name = tes_scenario
+Scenario.endTime = 43200
+Scenario.nrofHostGroups = 1
+Group.router = SprayAndWaitRouter
+Group.movementModel = RandomWaypoint
+Group.nrofHosts = 50
+Group.bufferSize = 5M
+
+Events1.hosts = 0,49
+Events1.interval = 120,125
+Events1.size = 100k, 200k
+
+MovementModel.worldSize = 500, 200
+Report.nrofReports = 1
+Report.report1 = DropReport
+
+
